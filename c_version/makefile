@@ -1,12 +1,13 @@
-CC = gcc -lm
+CC = gcc
+OP = -lm
 
 all: kaprekarDemo kaprekarTest
 
 kaprekarDemo: kaprekarUtils.o kaprekarDemo.c
-	$(CC) kaprekarDemo.c kaprekarUtils.o -o kaprekarDemo
+	$(CC) kaprekarDemo.c kaprekarUtils.o -o kaprekarDemo $(OP)
 
 kaprekarTest: kaprekarUtils.o kaprekarTest.c
-	$(CC) kaprekarTest.c kaprekarUtils.o -o kaprekarTest
+	$(CC) kaprekarTest.c kaprekarUtils.o -o kaprekarTest $(OP)
 
 kaprekarUtils.o: kaprekarUtils.c kaprekarUtils.h
 	$(CC) -c -o kaprekarUtils.o kaprekarUtils.c
